@@ -32,3 +32,4 @@ A modern, framework-less web application that generates lotto numbers (1-45) wit
 - Integrated `localStorage` to save user theme preference.
 - Updated UI with a fixed theme toggle button.
 - Integrated Google AdSense for monetization.
+- **Localization:** Full Korean language support for all pages and components.

@@ -89,6 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateHistory = () => {
         historyList.innerHTML = '';
+        if (history.length === 0) {
+            historyList.innerHTML = '<li>아직 생성된 기록이 없습니다.</li>';
+            return;
+        }
         history.forEach(numbers => {
             const li = document.createElement('li');
             li.textContent = numbers.join(', ');
