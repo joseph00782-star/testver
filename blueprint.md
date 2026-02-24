@@ -31,3 +31,4 @@ A modern, framework-less web application that generates lotto numbers (1-45) wit
 - Added CSS variables to manage theme-specific styles.
 - Integrated `localStorage` to save user theme preference.
 - Updated UI with a fixed theme toggle button.
+- Integrated Google AdSense for monetization.
