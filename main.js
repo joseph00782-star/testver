@@ -69,7 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const lottoDisplay = document.querySelector('lotto-display');
     const generateBtn = document.getElementById('generate-btn');
     const historyList = document.getElementById('history-list');
+    const themeBtn = document.getElementById('theme-btn');
+    const body = document.body;
     const history = [];
+
+    // Theme Logic
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeBtn.textContent = '☀️';
+    }
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeBtn.textContent = isDark ? '☀️' : '🌙';
+    });
 
     const updateHistory = () => {
         historyList.innerHTML = '';

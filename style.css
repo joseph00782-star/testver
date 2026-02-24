@@ -1,5 +1,28 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --container-bg: rgba(255, 255, 255, 0.8);
+    --text-color: #2d3436;
+    --heading-color: #2d3436;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --history-item-bg: rgba(255, 255, 255, 0.5);
+    --history-text: #2d3436;
+    --toggle-bg: #fff;
+}
+
+.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    --container-bg: rgba(45, 52, 54, 0.7);
+    --text-color: #dfe6e9;
+    --heading-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --history-item-bg: rgba(0, 0, 0, 0.3);
+    --history-text: #dfe6e9;
+    --toggle-bg: #2d3436;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -8,10 +31,12 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-gradient);
+    color: var(--text-color);
     position: relative;
     overflow-x: hidden;
     padding: 20px 0;
+    transition: background 0.5s ease;
 }
 
 body::before {
@@ -22,27 +47,54 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,100 C25,75 75,25 100,0" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/><path d="M0,0 C25,25 75,75 100,100" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/></svg>');
-    opacity: 0.3;
+    opacity: 0.1;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#theme-btn {
+    background: var(--toggle-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+#theme-btn:hover {
+    transform: scale(1.1);
 }
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--container-bg);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
     max-width: 90%;
     width: 500px;
+    transition: all 0.5s ease;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #fff;
+    color: var(--heading-color);
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 lotto-display {
@@ -70,17 +122,17 @@ lotto-display {
 }
 
 .history-container {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
 h2 {
-    color: #fff;
+    color: var(--heading-color);
     font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 15px;
-    text-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
 #history-list {
@@ -92,13 +144,15 @@ h2 {
 }
 
 #history-list li {
-    background: rgba(0, 0, 0, 0.2);
-    color: #fff;
+    background: var(--history-item-bg);
+    color: var(--history-text);
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
