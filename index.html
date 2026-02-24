@@ -1,28 +1,112 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Lotto Number Generator - Professional & Fair Random Picks</title>
+    <meta name="description" content="Generate random lotto numbers with our advanced tool. Learn about lotto odds, tips for responsible play, and track your generation history.">
     <meta name="google-adsense-account" content="ca-pub-5428791469263726">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5428791469263726"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="theme-toggle">
-        <button id="theme-btn" title="Toggle Theme">🌓</button>
-    </div>
-    <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <lotto-display></lotto-display>
-        <button id="generate-btn">Generate Numbers</button>
-        <div class="history-container">
-            <h2>History</h2>
-            <ul id="history-list"></ul>
+    <header>
+        <nav>
+            <div class="logo">LottoGen</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-btn" title="Toggle Theme">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <div class="hero-section">
+            <div class="container">
+                <h1>Lotto Number Generator</h1>
+                <p class="subtitle">Secure, fast, and completely random number generation for your next lotto play.</p>
+                
+                <lotto-display></lotto-display>
+                
+                <div class="action-area">
+                    <button id="generate-btn">Generate Numbers</button>
+                </div>
+
+                <div class="history-container">
+                    <h2>Recent Generations</h2>
+                    <ul id="history-list"></ul>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <section id="how-it-works" class="content-section">
+            <div class="container">
+                <h2>How Our Generator Works</h2>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>True Randomness</h3>
+                        <p>Our algorithm uses the latest cryptographic random number generators to ensure that every pick is independent and unbiased. Unlike mechanical draws which may have physical biases, our digital generation is perfectly distributed across the 1-45 range.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>No Repetitions</h3>
+                        <p>Within a single draw of 6 numbers, our system ensures no duplicates are generated, mirroring the physical process of picking balls from a machine without replacement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="content-section alternate">
+            <div class="container">
+                <h2>Lotto Tips & Responsible Play</h2>
+                <p>While lotto is a game of chance, understanding the mechanics can help you play more responsibly.</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Statistical Balance</h3>
+                        <p>Every combination has the same probability of appearing. Whether you pick 1, 2, 3, 4, 5, 6 or a scattered set, the odds remain identical.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Play for Fun</h3>
+                        <p>Treat the lotto as entertainment, not an investment. Never spend more than you can afford to lose. Remember that the odds of winning the jackpot are extremely slim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h4>Is this tool free to use?</h4>
+                    <p>Yes, our lotto number generator is 100% free and will always remain so.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can this guarantee a win?</h4>
+                    <p>No tool can guarantee a win in a random game of chance. This tool is designed to provide fair, random numbers for those who prefer not to pick their own.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2026 LottoGen. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
